@@ -8,7 +8,7 @@
         <h1 class="text-center text-5xl my-4">OUR PROJECTS</h1>
         <div v-if="projects[0]" class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- Large item -->
-            <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[0])}">
+            <div class="md:col-span-2 md:row-span-2 relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[0])}">
                 <img :src="projects[0]?.imageurl" alt="Nature" class="w-full h-full object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -20,7 +20,7 @@
             </div>
 
             <!-- Two small items -->
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[1])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[1])}">
                 <img :src="projects[1]?.imageurl" alt="Food" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[2])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[2])}">
                 <img :src="projects[2]?.imageurl" alt="Technology" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -40,7 +40,7 @@
             </div>
 
             <!-- Three medium items -->
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[3])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[3])}">
                 <img :src="projects[3]?.imageurl" alt="Travel" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[4])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[4])}">
                 <img :src="projects[3]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -60,7 +60,7 @@
             </div>
 
             <!-- bottom cards -->
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[5])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[5])}">
                 <img :src="projects[5]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[6])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[6])}">
                 <img :src="projects[6]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[7])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[7])}">
                 <img :src="projects[7]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden rounded-2xl shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[8])}">
+            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[8])}">
                 <img :src="projects[8]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

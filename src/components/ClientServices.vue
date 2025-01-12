@@ -31,18 +31,20 @@ onMounted(async (e)=>{
             <div
                 class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
                 <div v-for="service in services" class="relative">
-                    <div class="absolute -inset-1">
-                        <div
-                            class="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
+                    <template v-if="service.service">
+                        <div class="absolute -inset-1">
+                            <div
+                                class="w-full h-full rotate-180 opacity-30 blur-lg filter bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
+                            </div>
                         </div>
-                    </div>
-                    <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
-                        <div class="p-9"><img class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" :src="service.icon"
-                                alt="icon">
-                            <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">{{ service.service }}</h3>
-                            <p class="mt-6 text-base text-gray-600">{{ service.description }}</p>
+                        <div class="relative overflow-hidden bg-white shadow-md rounded-xl h-full">
+                            <div class="p-9"><img class="w-12 h-12 mx-auto text-gray-400 sm:mx-0" :src="service.icon"
+                                    alt="icon">
+                                <h3 class="mt-6 text-2xl font-bold text-gray-900 sm:mt-10">{{ service.service }}</h3>
+                                <p class="mt-6 text-base text-gray-600">{{ service.description }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </template>
                 </div>
             </div>
         </div>

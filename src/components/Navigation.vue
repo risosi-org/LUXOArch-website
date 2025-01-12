@@ -63,7 +63,10 @@ else{
                     <li><RouterLink class="" to="/contact">Contact</RouterLink></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl ml-8" :class="{ 'text-black': isLightTheme,'text-white': !isLightTheme }"><img :src="logo" class="h-12 w-12" alt="logo"> LuxoArch</a>
+            <a class="flex justify-center items-center text-xl ml-4" :class="{ 'text-black': isLightTheme,'text-white': !isLightTheme }"><img :src="logo" class="h-12 w-12" alt="logo"><div class="flex flex-col justify-start ml-2 font-bold">
+                <span class="text-lg">LUXOArch</span>
+                <span class="text-sm">Design and studio</span>
+            </div></a>
         </div>
         <div class="navbar-end">
             <div class="navbar-center hidden lg:flex">

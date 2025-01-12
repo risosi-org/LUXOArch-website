@@ -63,7 +63,7 @@ function sendFormData(e){
         <div class="bg-[#171411] relative flex flex-wrap py-6 rounded shadow-md">
           <div class="lg:w-1/2 px-6">
             <h2 class="title-font font-semibold text-white tracking-widest text-xs">ADDRESS</h2>
-            <p class="mt-1">12 Gratwick Mews, Edmondson Park, NSW 2174, Australia<br/><span class="text-accent">or</span> 18 Stanley St, Bankstown NSW 2200, Australia</p>
+            <p class="mt-1">12 Gratwick Mews, Edmondson Park, NSW 2174, Australia</p>
           </div>
           <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
             <h2 class="title-font font-semibold text-white tracking-widest text-xs">EMAIL</h2>
@@ -82,19 +82,19 @@ function sendFormData(e){
         </div>
         <div class="relative mb-4">
           <label for="name" class="leading-7 text-sm text-gray-400">Phone</label>
-          <input required type="tel" id="phone" name="phone" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <input required type="tel" id="phone" name="phone" placeholder="+1234567890" class="w-full  bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
-          <input required type="email" id="email" name="email" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <input required type="email" id="email" name="email" placeholder="name@mail.com" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="name" class="leading-7 text-sm text-gray-400">POST CODE</label>
-          <input required type="text" id="postcode" name="postcode" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <input required type="text" id="postcode" name="postcode" placeholder="4321" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
-          <textarea required id="message" name="message" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+          <textarea required id="message" name="message" class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" placeholder="Project details, services etc"></textarea>
         </div>
         <button type='submit' :disabled="isSending" class="text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg disabled:grayscale disabled:cursor-wait">Submit</button>
         <p class="text-xs text-gray-400 text-opacity-90 mt-3">Complete the enquiry form and a member of our team will be in touch as soon as possible.</p>
