@@ -15,73 +15,99 @@ const navStyle = ref({
     justifyContent: 'space-between',
     /* padding: 1rem 2rem; */
 })
-const isLightTheme = computed(() => route.fullPath === '/about'||route.fullPath==='/projects')
-watch(isLightTheme,()=>{
+const isLightTheme = computed(() => route.fullPath === '/about' || route.fullPath === '/projects')
+watch(isLightTheme, () => {
     if (isLightTheme.value) {
-    logo.value = logo2
-    navStyle.value = {
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        backdropFilter: 'none',
-        display: 'flex',
-        justifyContent: 'space-between',
-        
+        logo.value = logo2
+        navStyle.value = {
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+            backdropFilter: 'none',
+            display: 'flex',
+            justifyContent: 'space-between',
+
+        }
     }
-}
-else{
-    logo.value = logo1
-    navStyle.value = {
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        backdropFilter: 'blur(10px)',
-        display: 'flex',
-        justifyContent: 'space-between',
-        
+    else {
+        logo.value = logo1
+        navStyle.value = {
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            backdropFilter: 'blur(10px)',
+            display: 'flex',
+            justifyContent: 'space-between',
+
+        }
     }
-}
 
 })
 
 </script>
 <template>
-<div class="w-full flex justify-center items-center">
+    <div class="w-full flex justify-center items-center">
 
-    <div class="navbar fixed top-4 z-10 shadow-lg lg:rounded-full lg:w-[85%] mx-auto" :style="navStyle">
-        <div class="navbar-start">
-            <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden " :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
-                    </svg>
+        <div class="navbar fixed top-4 z-10 shadow-lg lg:rounded-full lg:w-[85%] mx-auto" :style="navStyle">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden "
+                        :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li>
+                            <RouterLink class="" to="/">Home</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="" to="/about">About</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="" to="/services">Services</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="" to="/projects">Projects</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="" to="/contact">Contact</RouterLink>
+                        </li>
+                    </ul>
                 </div>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow" >
-                    <li><RouterLink class="" to="/">Home</RouterLink></li>
-                    <li><RouterLink class="" to="/about">About</RouterLink></li>
-                    <li><RouterLink class="" to="/services">Services</RouterLink></li>
-                    <li><RouterLink class="" to="/projects">Projects</RouterLink></li>
-                    <li><RouterLink class="" to="/contact">Contact</RouterLink></li>
-                </ul>
+                <a class="flex justify-center items-center text-xl ml-4"
+                    :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }"><img :src="logo"
+                        class="h-12 w-12" alt="logo">
+                    <div class="flex flex-col justify-start ml-2 font-bold">
+                        <span class="text-lg">LUXOArch</span>
+                        <span class="text-sm">Design and studio</span>
+                    </div>
+                </a>
             </div>
-            <a class="flex justify-center items-center text-xl ml-4" :class="{ 'text-black': isLightTheme,'text-white': !isLightTheme }"><img :src="logo" class="h-12 w-12" alt="logo"><div class="flex flex-col justify-start ml-2 font-bold">
-                <span class="text-lg">LUXOArch</span>
-                <span class="text-sm">Design and studio</span>
-            </div></a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1 " :class="{ 'text-black': isLightTheme ,'text-white': !isLightTheme}">
-                    <li><RouterLink class="focus:text-white" to="/">Home</RouterLink></li>
-                    <li><RouterLink class="focus:text-white" to="/about">About</RouterLink></li>
-                    <li><RouterLink class="focus:text-white" to="/services">Services</RouterLink></li>
-                    <li><RouterLink class="focus:text-white" to="/projects">Projects</RouterLink></li>
-                    <li><RouterLink class="focus:text-white" to="/contact">Contact</RouterLink></li>
-                </ul>
+            <div class="navbar-end">
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 "
+                        :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }">
+                        <li>
+                            <RouterLink class="focus:text-white" to="/">Home</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="focus:text-white" to="/about">About</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="focus:text-white" to="/services">Services</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="focus:text-white" to="/projects">Projects</RouterLink>
+                        </li>
+                        <li>
+                            <RouterLink class="focus:text-white" to="/contact">Contact</RouterLink>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </template>
 
 <style scoped>
@@ -97,7 +123,7 @@ else{
     font-size: 1.2rem;
     background-color: rgba(0, 0,0, 0.4);
 } */
- /* .navbar {
+/* .navbar {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     width: 100%;

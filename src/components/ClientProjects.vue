@@ -22,7 +22,7 @@ import papaparse from 'papaparse';
 import { ref, onMounted } from 'vue';
 
 const projects = ref([])
-onMounted(async (e) => {
+onMounted(async () => {
   const fileUrl = 'https://luxoarch.github.io/assets/projects.csv';
   const res = await fetch(fileUrl)
   const data = await res.text()

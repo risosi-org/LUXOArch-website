@@ -18,28 +18,28 @@ export const routes = [
     component: AboutView
   },
   {
-    path:'/projects',
-    name:'projects',
+    path: '/projects',
+    name: 'projects',
     component: ProjectsView
   },
   {
-    path:'/allprojects',
-    name:'all projects',
+    path: '/allprojects',
+    name: 'all projects',
     component: AllProjects
   },
   {
-    path:'/services',
-    name:'services',
+    path: '/services',
+    name: 'services',
     component: ServicesView
   },
   {
-    path:'/contact',
-    name:'contact',
+    path: '/contact',
+    name: 'contact',
     component: ContactView
   },
   {
-    path:'/minecraft',
-    name:'funnnnnnnnn',
+    path: '/minecraft',
+    name: 'funnnnnnnnn',
     component: SinglePageView
   }
   // {

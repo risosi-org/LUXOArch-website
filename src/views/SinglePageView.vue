@@ -7,9 +7,9 @@ import ServicesView from './ServicesView.vue';
 </script>
 
 <template>
-    <HomeView/>
-    <AboutView/>
-    <ServicesView/>
-    <ProjectsView/>
-    <ContactView/>
+    <HomeView />
+    <AboutView />
+    <ServicesView />
+    <ProjectsView />
+    <ContactView />
 </template>

@@ -2,7 +2,7 @@
 import Navigation from './components/Navigation.vue';
 import Footer from './components/Footer.vue';
 import Modal from './components/Modal.vue';
-import { provide,ref } from 'vue';
+import { provide, ref } from 'vue';
 import Card from './components/Card.vue';
 
 const currentModalContentComponent = ref({});
@@ -17,7 +17,7 @@ provide('setModalContent', setModalContent);
   <ClientOnly>
     <Navigation />
     <Modal>
-      <Card v-if="currentModalContentComponent?.title" :data="currentModalContentComponent"/>
+      <Card v-if="currentModalContentComponent?.title" :data="currentModalContentComponent" />
     </Modal>
   </ClientOnly>
   <RouterView />

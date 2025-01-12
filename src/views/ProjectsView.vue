@@ -114,7 +114,7 @@ const projects = ref([])
 const my_modal_1 = ref(null)
 const setModalContent = inject('setModalContent')
 
-onMounted(async (e)=>{
+onMounted(async ()=>{
     ///const fileUrl = new URL('@/assets/data/projects.csv', import.meta.url).href;
     const fileUrl = 'https://luxoarch.github.io/assets/projects.csv';
     const res = await fetch(fileUrl)

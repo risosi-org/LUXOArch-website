@@ -2,6 +2,8 @@
 import ClientProjects from '@/components/ClientProjects.vue';
 </script>
 
-<template><ClientOnly>
-    <ClientProjects />
-</ClientOnly></template>
+<template>
+    <ClientOnly>
+        <ClientProjects />
+    </ClientOnly>
+</template>

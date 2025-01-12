@@ -5,14 +5,14 @@ import { onMounted, ref } from 'vue';
 const services = ref([])
 
 
-onMounted(async (e)=>{
-    const fileUrl ='https://luxoarch.github.io/assets/services.csv'
+onMounted(async (e) => {
+    const fileUrl = 'https://luxoarch.github.io/assets/services.csv'
     const res = await fetch(fileUrl)
     const data = await res.text()
-    const parsed = papaparse.parse(data, {header: true})
+    const parsed = papaparse.parse(data, { header: true })
     services.value = parsed.data
 
-    
+
 })
 
 
@@ -23,10 +23,12 @@ onMounted(async (e)=>{
     <section class="py-12 bg-[#171411] text-gray-100  pt-24">
         <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="max-w-xl mx-auto text-center xl:max-w-2xl">
-                <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6">What we Offer?</h2>
-                <p class="mb-4">We are provide complete solution on design and architecture that helps you be more productive and efficient when building
+                <h2 class="text-3xl font-bold leading-tight text-gray-50 sm:text-4xl xl:text-5xl mb-6">What we Offer?
+                </h2>
+                <p class="mb-4">We are provide complete solution on design and architecture that helps you be more
+                    productive and efficient when building
                     your dream.</p>
-    
+
             </div>
             <div
                 class="grid max-w-4xl lg:max-w-6xl grid-cols-1 mx-auto mt-8 text-center gap-y-4 sm:gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:mt-12 lg:mt-20 sm:text-left">
