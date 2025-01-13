@@ -2,7 +2,7 @@
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  document.getElementById('video').play()
+  document.getElementById('video').play();
 })
 </script>
 
@@ -13,13 +13,13 @@ onMounted(() => {
         <video autoplay="1" id="video" muted loop playsinline="1" class="video" src="../assets/vid.mp4">
         </video>
         <div
-          class="p-6 w-full min-h-screen flex items-center flex-col justify-center bg-[rgba(0,0,0,0.5)] pt-32 text-center">
-          <span class="text-yellow-600">MEET THE ARCH</span>
-          <h1 class="text-5xl text-white font-bold">Looking for what? <br /> <span class="text-yellow-600">Classic or
+          class="p-6 w-full min-h-screen flex items-center flex-col justify-center bg-[rgba(0,0,0,0.3)] pt-32 text-center">
+          <span class="text-yellow-500">MEET THE ARCH</span>
+          <h1 class="text-5xl text-white font-bold">Looking for what? <br /> <span class="text-yellow-500">Classic or
               Modern.</span></h1>
           <p class="py-6 text-white block lg:w-1/2 mx-auto">
             LuxoArch Design & Studio is a Building Design and Engineering services firm specializing in
-            residential – Houses, Duplex, Townhouses, NDIS, Granny & Extensions.
+            residential sector– Houses, Duplex, Townhouses, NDIS, Granny & Extensions.
             We offer comprehensive design and approval packages for all types of developments.
           </p>
           <RouterLink to="/projects" class="btn btn-primary btn-outline rounded-full">SEE OUR PROJECTS</RouterLink>
@@ -41,12 +41,16 @@ onMounted(() => {
   bottom: 0;
   right: 0;
   z-index: -1;
+  /* aspect-ratio: 16/9; */
+  /* height: 100vh; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
 @media (min-aspect-ratio: 16/9) {
   .video {
-    /* height = 100 * (9 / 16) = 56.25 */
     width: 100%;
     height: auto;
   }
@@ -54,9 +58,8 @@ onMounted(() => {
 
 @media (max-aspect-ratio: 16/9) {
   .video {
-    /* width = 100 / (9 / 16) = 177.777777 */
     width: auto;
     height: 100%;
   }
-}
+} 
 </style>

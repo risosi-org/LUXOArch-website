@@ -74,12 +74,12 @@ watch(isLightTheme, () => {
                         </li>
                     </ul>
                 </div>
-                <a class="flex justify-center items-center text-xl ml-4"
+                <a class="flex justify-center items-center text-xl ml-1"
                     :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }"><img :src="logo"
                         class="h-12 w-12" alt="logo">
                     <div class="flex flex-col justify-start ml-2 font-bold">
                         <span class="text-lg">LUXOArch</span>
-                        <span class="text-sm">Design and studio</span>
+                        <span class="md:text-sm text-xs">Design and studio</span>
                     </div>
                 </a>
             </div>

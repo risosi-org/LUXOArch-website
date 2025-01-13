@@ -99,7 +99,7 @@
         </div>
     </div>
     <div class="w-full flex justify-center items-center">
-        <RouterLink to="/allprojects" class="btn btn-accent mx-auto my-5">View all</RouterLink>       
+        <RouterLink to="/allprojects" class="btn btn-primary rounded-full mx-auto my-5 uppercase tracking-widest">View all</RouterLink>       
     </div>
 </div>
         </div>

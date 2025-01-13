@@ -19,12 +19,12 @@
     <div class="w-full lg:w-[31%] h-full flex flex-col items-center justify-center">
       <img class="w-full h-[50%]" src="../assets/Rectangle 11.png" alt="about" />
       <div class="w-full p-4">
-        <span class="text-yellow-800">Explor </span>
+        <span class="text-yellow-800 uppercase">Explore </span>
         <h1 class="text-3xl text-slate-800 font-bold">Our creation</h1>
         <p class="text-1xl text-grey">
           Take a look on our projects to see the diverse range of projects we have successfully completed.
         </p>
-        <RouterLink to="/allprojects" class="btn btn-accent mt-2">Explor</RouterLink>
+        <RouterLink to="/allprojects" class="btn btn-accent mt-2 uppercase">Explore</RouterLink>
       </div>
     </div>
   </div>
