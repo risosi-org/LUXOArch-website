@@ -1,7 +1,8 @@
 <template>
   <section class="container mx-auto px-4 py-8 mt-[68px]">
     <h2 class="text-4xl border-b-4 border-accent inline-block">Projects</h2>
-    <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full min-h-screen mt-4">
+    <Loading v-if="isLoading" />
+    <div v-else class="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full min-h-screen mt-4">
       <template v-for="project in projects">
 
         <div v-if="project.title" className="card bg-transparent max-w-96 mx-auto bg-base-100 shadow-lg">
@@ -20,7 +21,8 @@
 <script setup>
 import papaparse from 'papaparse';
 import { ref, onMounted } from 'vue';
-
+import Loading from './Loading.vue';
+const isLoading = ref(true);
 const projects = ref([])
 onMounted(async () => {
   const fileUrl = 'https://luxoarch.github.io/assets/projects.csv';
@@ -28,6 +30,6 @@ onMounted(async () => {
   const data = await res.text()
   const parsed = papaparse.parse(data, { header: true })
   projects.value = parsed.data
-
+  isLoading.value = false;
 })
 </script>

@@ -1,7 +1,7 @@
 <template>
     <section class="min-h-screen  mt-[68px] w-full">
-        
-        <div class="w-full">
+        <Loading v-if="isLoading" />
+        <div v-else class="w-full">
         <div class="w-full">
     <div class="container mx-auto px-4 py-8">
         <span class="block text-center text-xs text-accent">DISCOVER</span>
@@ -107,12 +107,14 @@
 </template>
 <script setup>
 
+import Loading from '@/components/Loading.vue';
 import papaparse from 'papaparse';
 import { inject, onMounted, ref } from 'vue';
 
 const projects = ref([])
 const my_modal_1 = ref(null)
 const setModalContent = inject('setModalContent')
+const isLoading = ref(true);
 
 onMounted(async ()=>{
     //const fileUrl = new URL('@/assets/data/projects.csv', import.meta.url).href;
@@ -122,6 +124,7 @@ onMounted(async ()=>{
     const parsed = papaparse.parse(data, {header: true})
     projects.value = parsed.data
     my_modal_1.value = document.getElementById('my_modal_1')
+    isLoading.value = false
 })
 
 </script>
