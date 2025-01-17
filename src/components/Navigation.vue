@@ -74,33 +74,33 @@ watch(isLightTheme, () => {
                         </li>
                     </ul>
                 </div>
-                <a class="flex justify-center items-center text-xl ml-1"
+                <RouterLink to="/" class="flex justify-center items-center text-xl ml-3 text-nowrap"
                     :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }"><img :src="logo"
                         class="h-12 w-12" alt="logo">
                     <div class="flex flex-col justify-start ml-2 font-bold">
                         <span class="text-lg">LUXOArch</span>
-                        <span class="md:text-sm text-xs">Design and studio</span>
+                        <span class="md:text-sm text-xs font-normal">Design and studio</span>
                     </div>
-                </a>
+                </RouterLink>
             </div>
             <div class="navbar-end">
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1 "
                         :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }">
                         <li>
-                            <RouterLink class="focus:text-white" to="/">Home</RouterLink>
+                            <RouterLink active-class="text-primary focus:text-primary" to="/">Home</RouterLink>
                         </li>
                         <li>
-                            <RouterLink class="focus:text-white" to="/about">About</RouterLink>
+                            <RouterLink active-class="text-primary focus:text-primary" to="/about">About</RouterLink>
                         </li>
                         <li>
-                            <RouterLink class="focus:text-white" to="/services">Services</RouterLink>
+                            <RouterLink active-class="text-primary focus:text-primary" to="/services">Services</RouterLink>
                         </li>
                         <li>
-                            <RouterLink class="focus:text-white" to="/projects">Projects</RouterLink>
+                            <RouterLink active-class="text-primary focus:text-primary" to="/projects">Projects</RouterLink>
                         </li>
                         <li>
-                            <RouterLink class="focus:text-white" to="/contact">Contact</RouterLink>
+                            <RouterLink active-class="text-primary focus:text-primary" to="/contact">Contact</RouterLink>
                         </li>
                     </ul>
                 </div>

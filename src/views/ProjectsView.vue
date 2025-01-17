@@ -60,7 +60,7 @@
             </div>
 
             <!-- bottom cards -->
-            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[5])}">
+            <div v-if="projects[5]?.imageurl" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[5])}">
                 <img :src="projects[5]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[6])}">
+            <div v-if="projects[6]?.imageurl" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[6])}">
                 <img :src="projects[6]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[7])}">
+            <div v-if="projects[7]?.imageurl" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[7])}">
                 <img :src="projects[7]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[8])}">
+            <div v-if="projects[8]?.imageurl" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[8])}">
                 <img :src="projects[8]?.imageurl" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -115,7 +115,7 @@ const my_modal_1 = ref(null)
 const setModalContent = inject('setModalContent')
 
 onMounted(async ()=>{
-    ///const fileUrl = new URL('@/assets/data/projects.csv', import.meta.url).href;
+    //const fileUrl = new URL('@/assets/data/projects.csv', import.meta.url).href;
     const fileUrl = 'https://luxoarch.github.io/assets/projects.csv';
     const res = await fetch(fileUrl)
     const data = await res.text()

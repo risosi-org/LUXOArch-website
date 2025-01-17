@@ -1,5 +1,5 @@
 <template>
-  <div className="card bg-transparent w-96 mx-auto">
+  <div className="card bg-transparent max-w-96 mx-auto">
     <figure className="px-10 pt-10">
       <img :src="imageRef" alt="Shoes" className="rounded-xl w-full" />
     </figure>
@@ -20,6 +20,5 @@ watch(() => data, (newData) => {
   imageRef.value = newData.imageurl
   title.value = newData.title
   description.value = newData.description
-  console.log(newData)
 })
 </script>

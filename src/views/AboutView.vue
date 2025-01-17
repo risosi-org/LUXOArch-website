@@ -1,8 +1,8 @@
 <template>
   <div class="flex justify-center flex-col lg:flex-row px-4 lg:px-0 min-h-screen lg:h-screen mb-5 mt-[88px]">
     <div class="w-full lg:w-[23%] h-full flex flex-col items-center justify-center">
-      <img class="w-full h-[40%]" src="../assets/Rectangle 9.png" alt="about" />
-      <img class="w-full h-[40%] mt-2" src="../assets/Rectangle 9 (1).png" alt="about" />
+      <img class="w-full h-[40%]" src="../assets/07.jpg" alt="about" />
+      <img class="w-full h-[40%] mt-2" src="../assets/01.jpg" alt="about" />
     </div>
     <div class="w-full lg:w-[25%] flex flex-col justify-evenly bg-[#171411] p-4 overflow-scroll">
       <h1 class="text-4xl text-white">About us</h1>
@@ -17,7 +17,7 @@
       <RouterLink to="/services" class="btn btn-accent mt-2 btn-outline">Our Services</RouterLink>
     </div>
     <div class="w-full lg:w-[31%] h-full flex flex-col items-center justify-center">
-      <img class="w-full h-[50%]" src="../assets/Rectangle 11.png" alt="about" />
+      <img class="w-full h-[50%]" src="../assets/FERDOUS.jpg" alt="about" />
       <div class="w-full p-4">
         <span class="text-yellow-800 uppercase">Explore </span>
         <h1 class="text-3xl text-slate-800 font-bold">Our creation</h1>
