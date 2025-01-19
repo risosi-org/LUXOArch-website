@@ -78,7 +78,7 @@ watch(isLightTheme, () => {
                     :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }"><img :src="logo"
                         class="h-12 w-12" alt="logo">
                     <div class="flex flex-col justify-start ml-2 font-bold">
-                        <span class="text-lg">LUXOArch</span>
+                        <span class="text-lg">LuxoArch</span>
                         <span class="md:text-sm text-xs font-normal">Design and studio</span>
                     </div>
                 </RouterLink>
