@@ -14,17 +14,17 @@
         deliver innovative and sustainable solutions tailored to each client's unique needs. We believe in creating
         spaces that are not only functional but also aesthetically pleasing, ensuring that every project we undertake is
         a true reflection of our client's vision and lifestyle.</p>
-      <RouterLink to="/services" class="btn btn-accent mt-2 btn-outline">Our Services</RouterLink>
+      <RouterLink to="/services" class="btn btn-primary mt-2 btn-outline">Our Services</RouterLink>
     </div>
     <div class="w-full lg:w-[31%] h-full flex flex-col items-center justify-center">
       <img class="w-full h-[50%]" src="../assets/FERDOUS.jpg" alt="about" />
       <div class="w-full p-4">
-        <span class="text-yellow-800 uppercase">Explore </span>
+        <span class="text-yellow-500 uppercase">Explore </span>
         <h1 class="text-3xl text-slate-800 font-bold">Our creation</h1>
         <p class="text-1xl text-grey">
           Take a look on our projects to see the diverse range of projects we have successfully completed.
         </p>
-        <RouterLink to="/allprojects" class="btn btn-accent mt-2 uppercase">Explore</RouterLink>
+        <RouterLink to="/allprojects" class="btn btn-primary  mt-2 uppercase">Explore</RouterLink>
       </div>
     </div>
   </div>

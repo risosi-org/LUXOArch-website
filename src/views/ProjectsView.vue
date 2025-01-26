@@ -4,7 +4,7 @@
         <div v-else class="w-full">
         <div class="w-full">
     <div class="container mx-auto px-4 py-8">
-        <span class="block text-center text-xs text-accent">DISCOVER</span>
+        <span class="block text-center text-xs text-primary">DISCOVER</span>
         <h1 class="text-center text-5xl my-4">OUR PROJECTS</h1>
         <div v-if="projects[0]" class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- Large item -->

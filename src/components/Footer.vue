@@ -27,11 +27,11 @@ watch(isLightTheme, () => {
     <aside>
       <img :src="logo" alt="logo" class="w-14 h-14" />
       <p class="font-bold">
-        LuxoArch Design & Studio Pty Ld.
+        LuxoArch Design & Studio Pty Ltd.
         <br />
         Providing reliable design.
       </p>
-      <p>Copyright © {{ new Date().getFullYear() }} LuxoArch Design & Studio<br /> ABN67 373 843 627</p>
+      <p>Copyright © {{ new Date().getFullYear() }} LuxoArch Design & Studio<br /> ABN 67 373 843 627</p>
     </aside>
     <nav>
       <div class="grid grid-flow-col gap-4">
