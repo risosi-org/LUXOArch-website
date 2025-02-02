@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router'
 const route = useRoute()
-const isLightTheme = computed(() => route.fullPath === '/about' || route.fullPath === '/projects')
+const isLightTheme = computed(() => route.fullPath === '/zsd' || route.fullPath === '/projects')
 import logo1 from '@/assets/logo.png'
 import logo2 from '@/assets/logo-tr.png'
 

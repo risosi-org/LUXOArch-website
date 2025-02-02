@@ -6,6 +6,7 @@ import ServicesView from '@/views/ServicesView.vue'
 import ContactView from '@/views/ContactView.vue'
 import SinglePageView from '@/views/SinglePageView.vue'
 import AllProjects from '@/views/AllProjects.vue'
+import Dashboard from '@/views/Dashboard.vue'
 export const routes = [
   {
     path: '/',
@@ -41,19 +42,11 @@ export const routes = [
     path: '/minecraft',
     name: 'funnnnnnnnn',
     component: SinglePageView
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (About.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import('../views/AboutView.vue'),
-  // },
 ]
-// const router = createRouter({
-//   history: createWebHistory(import.meta.env.BASE_URL),
-//   routes
-// })
 
-// export default router

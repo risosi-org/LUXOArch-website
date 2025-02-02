@@ -86,28 +86,29 @@ function sendFormData(e) {
         <div class="relative mb-4">
           <label for="name" class="leading-7 text-sm text-gray-400">Name</label>
           <input required type="text" id="name" name="name"
+            placeholder="Enter your Name"
             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="name" class="leading-7 text-sm text-gray-400">Phone</label>
-          <input required type="tel" id="phone" name="phone" placeholder="+1234567890"
+          <input required type="tel" id="phone" name="phone" placeholder="Enter your Phone"
             class="w-full  bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
-          <input required type="email" id="email" name="email" placeholder="name@mail.com"
+          <input required type="email" id="email" name="email" placeholder="Enter your Email"
             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="name" class="leading-7 text-sm text-gray-400">POST CODE</label>
-          <input required type="text" id="postcode" name="postcode" placeholder="4321"
+          <input required type="text" id="postcode" name="postcode" placeholder="Enter your POST code"
             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
         </div>
         <div class="relative mb-4">
           <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
           <textarea required id="message" name="message"
             class="w-full bg-gray-800 rounded border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-            placeholder="Project details, services etc"></textarea>
+            placeholder="Describe Project details, services etc"></textarea>
         </div>
         <button type='submit' :disabled="isSending"
           class="text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg disabled:grayscale disabled:cursor-wait">Submit</button>

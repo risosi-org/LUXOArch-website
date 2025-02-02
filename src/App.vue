@@ -12,7 +12,6 @@ const setModalContent = (component) => {
 
 provide('setModalContent', setModalContent);
 </script>
-
 <template>
   <ClientOnly>
     <Navigation />
