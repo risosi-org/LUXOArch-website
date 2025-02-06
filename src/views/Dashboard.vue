@@ -1,16 +1,9 @@
 <script setup>
-import Drawer from '@/components/Drawer.vue';
-import AuthProvider from '@/config/AuthProvider.vue';
-import ProtectedRoute from '@/router/ProtectedRoute.vue';
+
 </script>
 
 <template>
-    <AuthProvider>
-    <ProtectedRoute>
-        <Drawer>
-
-            <h1>dashboard</h1>
-        </Drawer>
-    </ProtectedRoute>
-</AuthProvider>
+ <div class="overflow-x-auto">
+  <h1 class="text-4xl m-6">Welcome admin</h1>
+</div>   
 </template>

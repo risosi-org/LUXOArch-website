@@ -16,6 +16,7 @@
     "@supabase/supabase-js": "^2.48.1",
     "@vueuse/head": "^2.0.0",
     "papaparse": "^5.4.1",
+    "suneditor": "^2.47.4",
     "vite-ssg": "^0.24.3",
     "vue": "^3.5.13",
     "vue-router": "^4.4.5"

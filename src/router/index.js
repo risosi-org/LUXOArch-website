@@ -7,7 +7,13 @@ import ContactView from '@/views/ContactView.vue'
 import SinglePageView from '@/views/SinglePageView.vue'
 import AllProjects from '@/views/AllProjects.vue'
 import Dashboard from '@/views/Dashboard.vue'
-export const routes = [
+import DefaultLayout from '../layouts/DefaultLayout.vue'
+import DashboardLayout from '@/layouts/DashboardLayout.vue'
+import ProjectsTable from '@/views/Dashboard/ProjectsTable.vue'
+import ProjectsForm from '@/views/Dashboard/ProjectsForm.vue'
+import ResetPass from '@/views/Dashboard/ResetPass.vue'
+import ResetPassRes from '@/views/Dashboard/ResetPassRes.vue'
+const mainRoutes = [
   {
     path: '/',
     name: 'home',
@@ -42,11 +48,51 @@ export const routes = [
     path: '/minecraft',
     name: 'funnnnnnnnn',
     component: SinglePageView
-  },
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: Dashboard
   }
 ]
 
+export const routes = [
+  {
+    path:"/",
+    name:"base",
+    component: DefaultLayout,
+    children:mainRoutes
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard layout',
+    component: DashboardLayout,
+    children:[
+      {
+        path:"",
+        name:"das",
+        component:Dashboard
+      },
+      {
+        path:"projects",
+        name:"table",
+        component:ProjectsTable
+      },
+      {
+        path:"projects/edit",
+        name:"edit",
+        component:ProjectsForm
+      },
+      {
+        path:"settings",
+        name:'reset',
+        component:ResetPass
+      },
+      {
+        path:"reset_password",
+        name:'reset ok',
+        component:ResetPassRes
+      }
+    ]
+  },
+  {
+    path:"/forget_password",
+    name:"forg",
+    component:ResetPass
+  }
+]

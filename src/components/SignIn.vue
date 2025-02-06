@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="text-xs">
-                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                        <a href="/forget_password" class="font-medium text-blue-600 hover:text-blue-500">
                             Forgot your password?
                         </a>
                     </div>

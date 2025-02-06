@@ -88,7 +88,7 @@ watch(isLightTheme, () => {
                     <ul class="menu menu-horizontal px-1 "
                         :class="{ 'text-black': isLightTheme, 'text-white': !isLightTheme }">
                         <li>
-                            <RouterLink active-class="text-primary focus:text-primary" to="/">Home</RouterLink>
+                            <RouterLink to="/" exact-active-class="text-primary focus:text-primary">Home</RouterLink>
                         </li>
                         <li>
                             <RouterLink active-class="text-primary focus:text-primary" to="/about">About</RouterLink>
