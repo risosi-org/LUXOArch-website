@@ -60,7 +60,7 @@ function getProjectById(id) {
 }
 
 
-provide('projects', { projects, error, isLoading, getProjectById, updateProject, deleteProject });
+provide('projects', { projects, error, isLoading, getProjectById, updateProject, deleteProject ,fetchProjects});
 </script>
 
 <template>

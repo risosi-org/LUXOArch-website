@@ -13,6 +13,7 @@ import ProjectsTable from '@/views/Dashboard/ProjectsTable.vue'
 import ProjectsForm from '@/views/Dashboard/ProjectsForm.vue'
 import ResetPass from '@/views/Dashboard/ResetPass.vue'
 import ResetPassRes from '@/views/Dashboard/ResetPassRes.vue'
+import SingleProject from '@/views/SingleProject.vue'
 const mainRoutes = [
   {
     path: '/',
@@ -28,6 +29,11 @@ const mainRoutes = [
     path: '/projects',
     name: 'projects',
     component: ProjectsView
+  },
+  {
+    path:"project/:id",
+    name:"id",
+    component:SingleProject
   },
   {
     path: '/allprojects',

@@ -12,7 +12,7 @@
 <script setup>
 import { defineProps, ref, watch } from 'vue'
 const { data } = defineProps(['data'])
-let imageRef = ref(data.imageurl)
+let imageRef = ref(data.banner)
 const title = ref(data.title)
 const description = ref(data.description)
 

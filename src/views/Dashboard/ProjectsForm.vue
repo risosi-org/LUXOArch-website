@@ -17,7 +17,7 @@ const route = useRoute();
 const updateId = route.query.update;
 
 
-const {getProjectById,updateProject } = inject('projects')
+const {getProjectById,updateProject,fetchProjects } = inject('projects')
 const defaultData = getProjectById(updateId)
 
 const router = useRouter();
@@ -120,6 +120,7 @@ async function addProject(fdata) {
     .insert([
       fdata
     ]);
+    fetchProjects()
   isLoading.value = false
   if (error) {
     console.error("Error inserting data:", error);
