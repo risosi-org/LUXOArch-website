@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center flex-col lg:flex-row px-4 lg:px-0 min-h-screen lg:h-screen mb-5 mt-[88px]">
+  <div class="flex justify-center flex-col lg:flex-row px-4 lg:px-0 min-h-screen lg:h-screen pb-5 pt-[88px] bg-[#171411]">
     <div class="w-full lg:w-[23%] h-full flex flex-col items-center justify-center">
       <img class="w-full h-[40%]" src="../assets/07.jpg" alt="about" />
       <img class="w-full h-[40%] mt-2" src="../assets/01.jpg" alt="about" />
@@ -20,8 +20,8 @@
       <img class="w-full h-[50%]" src="../assets/FERDOUS.jpg" alt="about" />
       <div class="w-full p-4">
         <span class="text-yellow-500 uppercase">Explore </span>
-        <h1 class="text-3xl text-slate-800 font-bold">Our creation</h1>
-        <p class="text-1xl text-grey">
+        <h1 class="text-3xl text-base-200 font-bold">Our creation</h1>
+        <p class="text-1xl text-base-300">
           Take a look on our projects to see the diverse range of projects we have successfully completed.
         </p>
         <RouterLink to="/allprojects" class="btn btn-primary  mt-2 uppercase">Explore</RouterLink>

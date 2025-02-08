@@ -1,16 +1,17 @@
 <script setup>
+import Carousel from '@/components/Carousel.vue';
 import { inject } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
 const projectId = route.params.id;
-const {getProjectById} = inject('projects')
+const {getProjectById, isLoading} = inject('projects')
 const project = getProjectById(projectId);
 console.log(project)
 
 </script>
 <template>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+    <div v-if="!isLoading" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 text-neutral-content">
     <div class="max-w-3xl mx-auto">
         <!-- Blog post header -->
         <div class="py-8">
@@ -19,7 +20,7 @@ console.log(project)
         </div>
 
         <!-- Featured image -->
-        <img :src="project.banner" alt="Featured image" class="w-full h-auto mb-8">
+        <Carousel :banners="project.banners"></Carousel>
 
         <!-- Blog post content -->
         <div v-html="project.content" ass="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
@@ -29,3 +30,9 @@ console.log(project)
     </div>
 </div>
 </template>
+
+<style>
+#app{
+    background: #171411; 
+}
+</style>

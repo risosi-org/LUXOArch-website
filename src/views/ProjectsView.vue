@@ -1,15 +1,15 @@
 <template>
-    <section class="min-h-screen  mt-[68px] w-full">
+    <section class="min-h-screen  pt-[68px] w-full bg-[#171411]">
         <Loading v-if="isLoading" />
         <div v-else class="w-full">
         <div class="w-full">
     <div class="container mx-auto px-4 py-8">
         <span class="block text-center text-xs text-primary">DISCOVER</span>
-        <h1 class="text-center text-5xl my-4">OUR PROJECTS</h1>
+        <h1 class="text-center text-white text-5xl my-4">OUR PROJECTS</h1>
         <div v-if="projects[0]" class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- Large item -->
             <div class="md:col-span-2 md:row-span-2 relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[0])}">
-                <img :src="projects[0]?.banner" alt="Nature" class="w-full h-full object-cover">
+                <img :src="projects[0]?.banners[0]" alt="Nature" class="w-full h-full object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -21,7 +21,7 @@
 
             <!-- Two small items -->
             <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[1])}">
-                <img :src="projects[1]?.banner" alt="Food" class="w-full h-48 object-cover">
+                <img :src="projects[1]?.banners[0]" alt="Food" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[2])}">
-                <img :src="projects[2]?.banner" alt="Technology" class="w-full h-48 object-cover">
+                <img :src="projects[2]?.banners[0]" alt="Technology" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -41,7 +41,7 @@
 
             <!-- Three medium items -->
             <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[3])}">
-                <img :src="projects[3]?.banner" alt="Travel" class="w-full h-48 object-cover">
+                <img :src="projects[3]?.banners[0]" alt="Travel" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[4])}">
-                <img :src="projects[3]?.banner" alt="Art" class="w-full h-48 object-cover">
+                <img :src="projects[4]?.banners[0]" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -60,8 +60,8 @@
             </div>
 
             <!-- bottom cards -->
-            <div v-if="projects[5]?.banner" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[5])}">
-                <img :src="projects[5]?.banner" alt="Art" class="w-full h-48 object-cover">
+            <div v-if="projects[5]?.banners.length" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[5])}">
+                <img :src="projects[5]?.banners[0]" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -69,8 +69,8 @@
                     </div>
                 </div>
             </div>
-            <div v-if="projects[6]?.banner" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[6])}">
-                <img :src="projects[6]?.banner" alt="Art" class="w-full h-48 object-cover">
+            <div v-if="projects[6]?.banners.length" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[6])}">
+                <img :src="projects[6]?.banners[0]" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -78,8 +78,8 @@
                     </div>
                 </div>
             </div>
-            <div v-if="projects[7]?.banner" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[7])}">
-                <img :src="projects[7]?.banner" alt="Art" class="w-full h-48 object-cover">
+            <div v-if="projects[7]?.banners.length" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[7])}">
+                <img :src="projects[7]?.banners[0]" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -87,8 +87,8 @@
                     </div>
                 </div>
             </div>
-            <div v-if="projects[8]?.banner" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[8])}">
-                <img :src="projects[8]?.banner" alt="Art" class="w-full h-48 object-cover">
+            <div v-if="projects[8]?.banners.length" class="relative overflow-hidden someREplacementforlater shadow-lg group" @click="()=>{my_modal_1.showModal();setModalContent(projects[8])}">
+                <img :src="projects[8]?.banners[0]" alt="Art" class="w-full h-48 object-cover">
                 <div
                     class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div class="absolute bottom-0 left-0 right-0 p-4">

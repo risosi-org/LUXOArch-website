@@ -27,30 +27,38 @@ function navigateToBack() {
 }
 
 
-const uploadImageToSupabase = async (files, info, core, uploadHandler)=> {
-      if (!files.length) return;
+const uploadImagesToSupabase = async (files, info, core, uploadHandler) => {
+  if (!files.length) return;
 
-      const file = files[0];
-      const filePath = `uploads/${Date.now()}_${file.name}`;
+  const uploadedFiles = [];
 
-      const { data, error } = await supabase.storage.from('banners').upload(filePath, file);
+  for (const file of files) {
+    const filePath = `uploads/${Date.now()}_${file.name}`;
+    
+    const { data, error } = await supabase.storage.from('banners').upload(filePath, file);
 
-      if (error) {
-        console.error('Upload failed:', error);
-        uploadHandler({ errorMessage: 'Upload failed' });
-        return;
-      }
-
-      // Get the public URL of the uploaded image
-      const { data: publicUrlData } = supabase.storage.from('banners').getPublicUrl(filePath);
-
-      if (!publicUrlData.publicUrl) {
-        uploadHandler({ errorMessage: 'Failed to get image URL' });
-        return;
-      }
-
-      uploadHandler({ result: [{ url: publicUrlData.publicUrl, name: file.name }] });
+    if (error) {
+      console.error('Upload failed:', error);
+      uploadHandler({ errorMessage: `Upload failed for ${file.name}` });
+      continue; // Skip to the next file
     }
+
+    // Get the public URL
+    const { data: publicUrlData } = supabase.storage.from('banners').getPublicUrl(filePath);
+
+    if (!publicUrlData.publicUrl) {
+      uploadHandler({ errorMessage: `Failed to get URL for ${file.name}` });
+      continue;
+    }
+
+    uploadedFiles.push({ url: publicUrlData.publicUrl, name: file.name });
+  }
+
+  if (uploadedFiles.length > 0) {
+    uploadHandler({ result: uploadedFiles });
+  }
+};
+
 const initializeEditor = () => {
     editorRef.value = SunEditor.create(document.getElementById("editor"), {
         height: 300,
@@ -65,7 +73,7 @@ const initializeEditor = () => {
             '/', // Line break
             ['outdent', 'indent'],
             ['align', 'horizontalRule', 'list', 'lineHeight'],
-            ['table', 'link', 'image'/** ,'math' */], // You must add the 'katex' library at options to use the 'math' plugin.
+            ['table', 'link', 'image','video'/** ,'math' */], // You must add the 'katex' library at options to use the 'math' plugin.
             /** ['imageGallery'] */ // You must add the "imageGalleryUrl".
             ['showBlocks', 'codeView'],
             ['preview', 'print']
@@ -73,7 +81,8 @@ const initializeEditor = () => {
         ],
         value:defaultData?.value?.content??""
     });
-    editorRef.value.onImageUploadBefore = uploadImageToSupabase
+    editorRef.value.onImageUploadBefore = uploadImagesToSupabase
+    
 }
 onMounted(() => {
     initializeEditor()
@@ -91,8 +100,10 @@ const handleSubmit = (e)=>{
     content:(editorRef.value.getContents(true))
     }
     // it is doing its best
-    uploadImageToSupabase(e.target.banner.files, null, null,({result})=>{
-        data.banner = result[0].url;
+    uploadImagesToSupabase(e.target.banner.files, null, null,({result})=>{
+        data.banners = result.map(file => file.url);
+        if(data.banners.length===0) delete data.banners
+        else data.banners = [...new Set([...data.banners, ...(defaultData.banners??[])])] // merge previous banners
         if (updateId) {
           updateProject(updateId,data)
           isLoading.value=false
@@ -102,7 +113,7 @@ const handleSubmit = (e)=>{
         addProject(data);
         navigateToBack()
     })
-
+// if update happens previous block it wont't execute
     if (updateId) {
           updateProject(updateId,data)
           isLoading.value = false
@@ -139,12 +150,12 @@ async function addProject(fdata) {
         <form @submit.prevent="handleSubmit" class="m-6 rounded-lg flex flex-col">
             <input :value="defaultData?.title" required type="text" placeholder="Title" class="input input-bordered w-full my-4" name="title" />
             <textarea :value="defaultData?.description" required class="textarea textarea-bordered w-full" placeholder="Small description for card" name="description"></textarea>
-            <img title="previous banner" class="w-40 my-4" v-if="updateId" :src="defaultData?.banner" alt="bnner">
+            <img title="previous banner" class="w-40 my-4" v-if="updateId" :src="defaultData?.banners[0]" alt="bnner">
             <label class="form-control w-full max-w-xs mb-4">
                 <div class="label">
                     <span class="label-text">Pick a file for banner</span>
                 </div>
-                <input :required="!updateId" type="file" class="file-input  file-input-bordered w-full" name="banner" />
+                <input :required="!updateId" multiple type="file" class="file-input  file-input-bordered w-full" name="banner" />
             </label>
             <div id="editor"></div>
             <button :disabled="isLoading" type="submit" class="btn btn-primary btn-sm max-w-20 my-6">{{updateId?"Update":"Post"}}</button>

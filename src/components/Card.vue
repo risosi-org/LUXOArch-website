@@ -1,7 +1,7 @@
 <template>
-  <div className="card bg-transparent max-w-96 mx-auto">
-    <figure className="px-10 pt-10">
-      <img :src="imageRef" alt="Shoes" className="rounded-xl w-full" />
+  <div className="card bg-transparent  w-full mx-auto">
+    <figure className="">
+      <Carousel :banners="banners"></Carousel>
     </figure>
     <div className="card-body items-center text-center">
       <h2 className="card-title">{{ title }}</h2>
@@ -11,13 +11,14 @@
 </template>
 <script setup>
 import { defineProps, ref, watch } from 'vue'
+import Carousel from './Carousel.vue';
 const { data } = defineProps(['data'])
-let imageRef = ref(data.banner)
+let banners = ref(data.banners)
 const title = ref(data.title)
 const description = ref(data.description)
 
 watch(() => data, (newData) => {
-  imageRef.value = newData.imageurl
+  banners.value = newData.banners
   title.value = newData.title
   description.value = newData.description
 })

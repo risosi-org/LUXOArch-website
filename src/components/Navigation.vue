@@ -15,7 +15,7 @@ const navStyle = ref({
     justifyContent: 'space-between',
     /* padding: 1rem 2rem; */
 })
-const isLightTheme = computed(() => route.fullPath === '/about' || route.fullPath === '/projects')
+const isLightTheme = computed(() => route.fullPath === '/at' || route.fullPath === '/prcts')
 watch(isLightTheme, () => {
     if (isLightTheme.value) {
         logo.value = logo2
