@@ -28,7 +28,7 @@ onMounted(() => {
           <h1 class="text-5xl text-white font-bold">
             Your Vision, Our Expertise <br />
             <span class="text-yellow-500"
-              >Design Your Dream Home with LuxoArch</span
+              >Design Your Dream Home with LuxoArch </span
             >
           </h1>
           <p class="py-6 text-white block lg:w-1/2 mx-auto">
